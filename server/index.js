@@ -10,7 +10,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname + '/public')));
 
 app.get("/", function(req, res) {
-    res.sendFile(__dirname + '../src/index.html')
+    const html = path.resolve(__dirname, '..', 'src/index.html')
+    res.sendFile(html)
 });
 
 
