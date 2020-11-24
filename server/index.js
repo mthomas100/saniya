@@ -7,7 +7,7 @@ const app = express();
 
 app.use(express.static('dist'));
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname + '/public')));
+// app.use(express.static(path.join(__dirname + '/public')));
 
 app.get("/", function(req, res) {
     const html = path.resolve(__dirname, '..', 'src/index.html')
@@ -15,6 +15,6 @@ app.get("/", function(req, res) {
 });
 
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
